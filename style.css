@@ -853,3 +853,275 @@ footer a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
 }
+
+* ========== ДОПОЛНИТЕЛЬНАЯ АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ ========== */
+
+/* Планшеты (768px - 992px) */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 42px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Телефоны (до 768px) */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+    
+    .phone {
+        font-size: 18px;
+        padding: 5px 12px;
+    }
+    
+    /* Герой/карусель */
+    .hero {
+        height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    .hero-title-accent::before,
+    .hero-title-accent::after {
+        display: none;
+    }
+    
+    .hero-text {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 90%;
+        max-width: 280px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Стрелки карусели на телефоне */
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .carousel-arrow-left {
+        left: 10px;
+    }
+    
+    .carousel-arrow-right {
+        right: 10px;
+    }
+    
+    .carousel-dots {
+        bottom: 15px;
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Заголовки секций */
+    .section-title {
+        font-size: 28px;
+        margin: 40px 0 30px;
+    }
+    
+    .section-title::before {
+        font-size: 12px;
+        letter-spacing: 4px;
+        bottom: -20px;
+    }
+    
+    /* Преимущества */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .feature-item {
+        padding: 20px 15px;
+    }
+    
+    .feature-icon {
+        font-size: 40px;
+    }
+    
+    .feature-item h3 {
+        font-size: 18px;
+    }
+    
+    .feature-item p {
+        font-size: 14px;
+    }
+    
+    /* Галерея */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-item img {
+        height: 220px;
+    }
+    
+    .gallery-caption {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    /* Форма */
+    .order-form {
+        padding: 25px 20px;
+        margin: 0 15px 40px 15px;
+    }
+    
+    .order-form::before {
+        border-width: 1px;
+    }
+    
+    .form-group label {
+        font-size: 16px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    /* Отзывы */
+    .reviews {
+        padding: 0 15px;
+    }
+    
+    .review-item {
+        padding: 20px;
+    }
+    
+    .review-item p {
+        font-size: 15px;
+    }
+    
+    /* Контакты */
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .contact-info {
+        padding: 20px;
+    }
+    
+    .contact-info h3 {
+        font-size: 20px;
+    }
+    
+    .contact-info p {
+        font-size: 16px;
+    }
+    
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Карта */
+    .contact-map {
+        height: 250px;
+    }
+    
+    /* Подвал */
+    footer {
+        padding: 20px 0;
+        font-size: 12px;
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .hero {
+        height: 450px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .hero-text {
+        font-size: 14px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .feature-icon {
+        font-size: 36px;
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .modal-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .modal-prev {
+        left: -5px;
+    }
+    
+    .modal-next {
+        right: -5px;
+    }
+}
