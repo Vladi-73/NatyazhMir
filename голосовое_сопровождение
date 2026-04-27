@@ -1,0 +1,82 @@
+// Функция воспроизведения через синтез речи (СКАЗОЧНЫЕ ВАРИАНТЫ)
+function playSpeechSynthesis() {
+  stopAllPlayback();
+
+  // Текст сказки (30 сек)
+  const taleText = `В граде Москве объявилось чудо дивное - потолки натяжные, словно паруса на ладьях богатырских! Ставят их мастера за день единый, а служат они десять годов!`;
+
+  // СОЗДАЁМ ТРИ ВАРИАНТА ДЛЯ ТЕСТА
+  // Раскомментируй тот, который хочешь протестировать:
+
+  /* ВАРИАНТ 1 - БЫЛИННЫЙ СКАЗИТЕЛЬ (медленный, глубокий)
+  const utterance = new SpeechSynthesisUtterance(taleText);
+  utterance.lang = "ru-RU";
+  utterance.rate = 0.7;      // Очень медленно
+  utterance.pitch = 0.6;      // Низкий голос
+  utterance.volume = 1;
+  */
+
+  /* ВАРИАНТ 2 - ВОЛШЕБНЫЙ СТАРЕЦ (таинственный)
+  const utterance = new SpeechSynthesisUtterance(taleText);
+  utterance.lang = "ru-RU";
+  utterance.rate = 0.85;      // Умеренно
+  utterance.pitch = 0.75;      // Низковатый
+  utterance.volume = 1;
+  */
+
+  /* ВАРИАНТ 3 - БОГАТЫРЬ-БАЮН (звонкий, напевный)
+  const utterance = new SpeechSynthesisUtterance(taleText);
+  utterance.lang = "ru-RU";
+  utterance.rate = 1.0;        // Обычный темп
+  utterance.pitch = 1.2;       // Выше, напевнее
+  utterance.volume = 1;
+  */
+
+  // ВАРИАНТ 4 - ТВОЙ ИДЕАЛЬНЫЙ (настраивай сам)
+  const utterance = new SpeechSynthesisUtterance(taleText);
+  utterance.lang = "ru-RU";
+  utterance.rate = 0.9;        // Поэкспериментируй: 0.5 - 2.0
+  utterance.pitch = 0.8;        // Поэкспериментируй: 0.5 - 2.0
+  utterance.volume = 1;
+
+  // Пробуем найти русские голоса
+  const voices = window.speechSynthesis.getVoices();
+
+  // Список доступных голосов (раскомментируй, чтобы увидеть все)
+  console.log("Доступные голоса:", voices.map(v => v.name + " (" + v.lang + ")"));
+
+  // Выбираем голос (попробуй разные)
+  const russianVoice = voices.find(voice =>
+    voice.lang.includes('ru') &&
+    (voice.name.includes('Milena') ||      // Милена
+     voice.name.includes('Google') ||       // Google голоса
+     voice.name.includes('Russian') ||      // Любые русские
+     voice.name.includes('Tatyana') ||      // Татьяна
+     voice.name.includes('Elena'))          // Елена
+  ) || voices.find(voice => voice.lang.includes('ru'));
+
+  if (russianVoice) {
+    utterance.voice = russianVoice;
+    console.log("Выбран голос:", russianVoice.name);
+  }
+
+  // События
+  utterance.onstart = function() {
+    isPlaying = true;
+    playTaleBtn.innerHTML = "⏸️ Стоп сказка";
+  };
+
+  utterance.onend = function() {
+    isPlaying = false;
+    playTaleBtn.innerHTML = "▶️ Слушать сказку";
+  };
+
+  utterance.onerror = function(event) {
+    console.error("Ошибка воспроизведения:", event);
+    isPlaying = false;
+    playTaleBtn.innerHTML = "▶️ Слушать сказку";
+  };
+
+  // Запускаем
+  window.speechSynthesis.speak(utterance);
+}
