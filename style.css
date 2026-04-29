@@ -71,7 +71,7 @@ header {
     flex-wrap: wrap;
 }
 
-.logo {
+.logo { https://vladi-73.github.io/NatyazhMir/
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1134,7 +1134,7 @@ footer a:hover {
 .fixed-hero-left {
     position: fixed;
     left: 2cm;
-    bottom: 3.5cm;
+    bottom: 3.5cm; https://vladi-73.github.io/NatyazhMir/
     width: 6.5cm;
     height: 6cm;
     z-index: 1000;
@@ -1157,7 +1157,7 @@ footer a:hover {
 /* ========== ФИКСИРОВАННАЯ ДЕВУШКА СПРАВА ========== */
 .fixed-girl-right {
     position: fixed;
-    right: 4.5cm;          /* от правого края */
+    right: 2cm;          /* от правого края */
     bottom: 3.5cm;         /* от нижнего края */
     width: 6.5cm;
     height: 6cm;
@@ -1189,7 +1189,7 @@ footer a:hover {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    display: block;
+    display: block; https://vladi-73.github.io/NatyazhMir/
 }
 
 /* Адаптация для телефонов */
